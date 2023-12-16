@@ -1,18 +1,20 @@
 import React from 'react'
 import dummy from '../db/data.json'
+import { useParams } from 'react-router-dom';
+import Kor_on_off from './Kor_on_off';
 
 function Word() {
-  const day = 1;
-  const wordList = dummy.words.filter(word => word.day === day)
+  const word = useParams().word; 
+  const wordList = dummy.words.filter(words => words.day === Number(word))
+
+
   return (
     <div>
+      <h2>Day {word}</h2>
       <table>
         <tbody>
           {wordList.map(one_word => (
-            <tr key={one_word.id}>
-              <td>{one_word.eng}</td>
-              <td>{one_word.kor}</td>
-            </tr>
+            <Kor_on_off one_word={one_word} key={one_word.id}/>
           ))}
         </tbody>
       </table>
