@@ -13,7 +13,7 @@ function Kor_on_off({ one_word }) {
 
   return (
     <>
-    <tr key={one_word.id} className={isDone ? "off" : ""}>
+    <tr key={one_word.id} className={isDone ? "off" : ''}>
       <td>
           <input type='checkbox' checked={isDone} onChange={toggleDone}/>
       </td>
