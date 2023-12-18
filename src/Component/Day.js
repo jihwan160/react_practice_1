@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import UseFetch from './UseFetch'
+import useFetch from '../hooks/useFetch';
 function Day() {
-  const days = UseFetch("http://localhost:3001/days")
+  const days = useFetch("http://localhost:3001/days")
 
   return (
     <ul>

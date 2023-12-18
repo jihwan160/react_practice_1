@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
 import Kor_on_off from './Kor_on_off';
-import UseFetch from './UseFetch';
+import useFetch from '../hooks/useFetch';
 
 function Word() {
   const { word } = useParams(); 
 
-  const words = UseFetch(`http://localhost:3001/words?day=${word}`)
+  const words = useFetch(`http://localhost:3001/words?day=${word}`)
 
   return (
     <div>
